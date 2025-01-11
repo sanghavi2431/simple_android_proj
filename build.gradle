@@ -1,0 +1,48 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '8.0.2' apply false
+    id 'com.android.library' version '8.0.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.20' apply false
+}
+
+ext.wolooProd = [
+        'BASE_URL'          : '"https://app.woloo.in/"',
+        'SHOP_URL'          : '"https://shop.woloo.in/app_api/"',
+        'NODE_API_URL'      : '"https://api.woloo.in/"',
+        /*'BASE_URL'          : '"https://9fec6c5a3e3b.ngrok.io/"',*/
+        'BASE_URL_ENC'      : '"app.woloo.in"',
+        'END_POINT_ENC'     : '"/api/v1/authGet"',
+        'PORT_ENC'          : '443',
+        'LIVE_URL'          : '"3"',
+        'SAFETY_URL'           : '"https://app.woloo.in/validateJWS"',
+
+        'IS_SECURE'         : 'false',
+        'RESCUE_API_URL'    : '""',
+        'PERIOD_CATEGORY_ID'    : '"11"',
+        'SMT_APP_ID'    : '4367ea1bb842724523a47e65fc7de4f1',
+        'HANSEL_APP_ID'    : 'TJQG4S0AEJ7BWP3IZOB1I8J8O',
+        'HANSEL_APP_KEY'    : 'R8TP4P38VDDGV0I7QRRIQY8VYVABBIHDRJBWGU6QC6JG8CFB2C'
+]
+
+
+ext {
+    versionMajor = 2
+    versionMinor = 21
+    versionPatch = 10
+
+    compileSdkVersion = 34 // changed by Aarati
+    minSdkVersion = 26 // Changed by Aarati
+    targetSdkVersion = 34
+    versionCode = versionMajor * 10000 + versionMinor * 100 + versionPatch
+    versionName = "${versionMajor}.${versionMinor}.${versionPatch}"
+    supportLibVersion = "28.0.0"
+    flavorDimensions = "default"
+
+    appcompat = "1.1.0-alpha04"
+    material = "1.1.0-alpha06"
+    constraintLayout = "2.0.0-alpha5"
+    playServicesVersion = "9.2.1"
+    butterKnifeVersion = "10.2.3"
+    volley = "1.1.1"
+
+}
