@@ -36,6 +36,9 @@ jobs:
     - name: Download Dependencies
       run: ./gradlew dependencies
 
+    - name: Run Lint
+      run: ./gradlew lint
+
     - name: Build
       run: ./gradlew assembleDebug
 
@@ -61,3 +64,10 @@ jobs:
       with:
         name: app-debug
         path: app/build/outputs/apk/debug/*.apk
+
+    - name: Upload Lint Reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: lint-reports
+        path: app/build/reports/lint-results*.xml
