@@ -42,21 +42,21 @@ jobs:
     - name: Build
       run: ./gradlew assembleDebug
 
-    # - name: Run Unit Tests
-    #   run: ./gradlew testDebugUnitTest
+     - name: Run Unit Tests
+       run: ./gradlew testDebugUnitTest
 
-    # - name: Collect Test Results
-    #   if: always()
-    #   run: |
-    #     mkdir -p junit-reports
-    #     cp -r app/build/test-results/testDebugUnitTest/ junit-reports/
+     - name: Collect Test Results
+       if: always()
+       run: |
+         mkdir -p junit-reports
+         cp -r app/build/test-results/testDebugUnitTest/ junit-reports/
 
-    # - name: Upload Test Results
-    #   if: always()
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: junit-test-results
-    #     path: junit-reports/
+     - name: Upload Test Results
+       if: always()
+       uses: actions/upload-artifact@v3
+       with:
+         name: junit-test-results
+         path: junit-reports/
 
     - name: Upload Build Artifacts
       if: always()
